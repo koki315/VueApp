@@ -38,7 +38,7 @@ App.vueで上記3つを読み込み、
 - Button.vue
 - TextBox.vue
 - MessageList.vue
-- Message.vue
+- MessageList.vue
 
 
 ---

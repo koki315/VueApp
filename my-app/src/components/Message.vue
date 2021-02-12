@@ -1,20 +1,21 @@
 <template>
   <div class="message">
-    <div class="date">{{ month }}, {{ day }}</div>
-    <div>message</div>
+    <div>{{ date }}</div>
+    <div>{{ name }}</div>
   </div>
 </template>
 
 <script>
-var posted = new Date();
 
 export default {
-  data() {
-    return {
-      month: posted.getMonth() + 1,
-      day: posted.getDate(),
-    };
-  },
+  props:{
+    date:{
+      type:String
+    },
+    name:{
+      type:String
+    }
+  }
 };
 </script>
 
