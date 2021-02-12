@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header> </Header>
+    <Header/>
     <div class="container">
       <SideMenu />
       <Main></Main>
@@ -24,6 +24,9 @@ export default {
 </script>
 
 <style>
+body{
+  font-weight: bold;
+}
 ul {
   list-style: none;
   margin: 0;
@@ -34,5 +37,6 @@ ul {
   position: fixed;
   width: 100%;
   display: flex;
+  height: 100%;
 }
 </style>

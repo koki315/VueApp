@@ -18,15 +18,15 @@
 
 以下3つのコンポーネント作成を行う。
 
-- Header.vue
-- SideMenu.vue
-- Main.vue
+- Header.vue x
+- SideMenu.vue x
+- Main.vue x 
 
 App.vueで上記3つを読み込み、
 
-- Headerの固定
-- SideMenuの固定
-- Main.vue部分のみ縦にコンテンツが長いとスクロールすることを確認する
+- Headerの固定 x
+- SideMenuの固定 x
+- Main.vue部分のみ縦にコンテンツが長いとスクロールすることを確認する x
 
 ---
 
@@ -36,7 +36,7 @@ App.vueで上記3つを読み込み、
 (機能実装は後回し)
 
 - Button.vue
-- TextBox.vuez
+- TextBox.vue
 - MessageList.vue
 - Message.vue
 
