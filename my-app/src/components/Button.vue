@@ -1,5 +1,7 @@
 <template>
-  <button>{{ buttonName }}</button>
+  <button class="button" 
+  @click="$emit('onClick')"
+  >{{ buttonName }}</button>
 </template>
 
 <script>
@@ -14,7 +16,7 @@ export default {
 </script>
 
 <style>
-button {
+.button {
   background: red;
   border: none;
   font-size: 18px;

@@ -1,24 +1,43 @@
 <template>
-    <div class="form">
-      <textarea
-        id=""
-        cols="100"
-        rows="5"
-        placeholder="ここに入力してください。"
-      ></textarea>
-      <div class="button-container">
-        <Button buttonName="投稿"></Button>
-      </div>
+  <div class="form">
+    <textarea
+      id=""
+      cols="100"
+      rows="5"
+      placeholder="ここに入力してください。"
+      v-model="message"
+    ></textarea>
+    <div class="button-container">
+      <Button buttonName="投稿" @onClick="posted"></Button>
     </div>
+  </div>
 </template>
 
 <script>
-import Button from '@/components/Button'
+import Button from "@/components/Button";
 export default {
-  components:{
-    Button: Button
-  }
-  
+  data() {
+    return {
+      message: "",
+    };
+  },
+  components: {
+    Button: Button,
+  },
+  methods: {
+    posted() {
+      if (!this.message) {
+        alert("Message can't be blank !");
+      } else {
+        alert("thx");
+        let post = {
+          body: this.message,
+          date: new Date().toLocaleString(),
+        };
+        return post;
+      }
+    },
+  },
 };
 </script>
 
@@ -26,13 +45,13 @@ export default {
 textarea {
   width: 100%;
   border: 1px solid rgba(50, 50, 50);
-  border-radius: 5px; 
+  border-radius: 5px;
 }
 .form {
   padding: 10px 20px 30px;
-  border-bottom: 20px #C0C0C0 solid;
+  border-bottom: 20px #c0c0c0 solid;
 }
-.button-container{
+.button-container {
   text-align: right;
 }
 </style>

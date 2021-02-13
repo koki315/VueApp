@@ -16,21 +16,17 @@ export default {
     messages: {
       type: Array,
       required: true,
-      validator:(messages) => {    
-          return messages.forEach((message, index) => {
-          if (typeof message.body !== "string" || typeof message.date !== "string") {
-            console.log('=================');
-            console.log('false');
-            console.log('=================');
-            return false;
+      validator: (messages) => {
+        return messages.every((message) => {
+          // everyメソッドすべてがtrueを返したらtrueを返す。falseが一件でもあればfalse
+          if(typeof message.date !== 'string'){
+            return false
           }
-          console.log('=================');
-          console.log(index);
-          console.log('true');
-          console.log('=================');
+           if(typeof message.body !== 'string'){
+            return false
+          }
           return true;
         });
-        
       },
     },
   },
@@ -43,5 +39,4 @@ export default {
 Message;
 </script>
 
-<style>
-</style>
+<style></style>
