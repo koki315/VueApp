@@ -1,7 +1,7 @@
 <template>
   <div class="form">
     <textarea
-      id=""
+      id="textarea"
       cols="100"
       rows="5"
       placeholder="ここに入力してください。"
@@ -21,6 +21,13 @@ export default {
       message: "",
     };
   },
+  props: {
+    onPost: {
+      type: Function,
+      required: true,
+    },
+  },
+
   components: {
     Button: Button,
   },
@@ -34,6 +41,8 @@ export default {
           body: this.message,
           date: new Date().toLocaleString(),
         };
+        this.onPost(post);
+        this.message = ""
         return post;
       }
     },
