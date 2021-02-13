@@ -1,7 +1,7 @@
 <template>
   <div class="message">
     <div>{{ date }}</div>
-    <div>{{ name }}</div>
+    <div>{{ body }}</div>
   </div>
 </template>
 
@@ -9,12 +9,14 @@
 
 export default {
   props:{
-    date:{
-      type:String
+    body:{
+      type:String,
+      required:true
     },
-    name:{
-      type:String
-    }
+    date:{
+      type:String,
+      required:true
+    },
   }
 };
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <TextBox />
-    <MessageList :messages="dummyMessages"/>
+    <MessageList :messages="dummyMessages" />
   </div>
 </template>
 
@@ -17,16 +17,16 @@ export default {
   data() {
     return {
       dummyMessages: [
-        { name: "abc", date: "1223" },
-        { name: "abc", date: "1223" },
-        { name: "abc", date: "1223" },
-        { name: "abc", date: "1223" },
-        { name: "abc", date: "1223" },
-        { name: "abc", date: "1223" },
-        { name: "abc", date: "1223" },
-        { name: "abc", date: "1223" },
-        { name: "abc", date: "1223" },
-        { name: "abc", date: "1223" },
+        { body: "abc", date: "1"},
+        { body: "abc", date: "123"},
+        { body: "abc", date: "123"},
+        { body: "abc", date: "123"},
+        { body: "abc", date: "123"},
+        { body: "abc", date: "123"},
+        { body: "abc", date: "123"},
+        { body: "abc", date: "123"},
+        { body: "abc", date: "123"},
+        { body: "abc", date: "123"},
       ],
     };
   },
