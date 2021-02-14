@@ -1,6 +1,6 @@
 <template>
   <div class="message-list">
-    <template v-for="(message, index) in importedMessages">
+    <template v-for="(message, index) in messages">
       <Message :key="index" :body="message.body" :date="message.date" />
     </template>
   </div>
@@ -19,11 +19,11 @@ export default {
       validator: (messages) => {
         return messages.every((message) => {
           // everyメソッドすべてがtrueを返したらtrueを返す。falseが一件でもあればfalse
-          if(typeof message.date !== 'string'){
-            return false
+          if (typeof message.date !== "string") {
+            return false;
           }
-           if(typeof message.body !== 'string'){
-            return false
+          if (typeof message.body !== "string") {
+            return false;
           }
           return true;
         });
@@ -31,9 +31,7 @@ export default {
     },
   },
   data() {
-    return {
-      importedMessages: this.messages,
-    };
+    return {};
   },
 };
 Message;

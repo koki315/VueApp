@@ -1,7 +1,7 @@
 <template>
   <div class="message">
-    <div>{{ date }}</div>
-    <div>{{ body }}</div>
+    <div class="message-date">{{ date }}</div>
+    <p class="messsage-body">{{ body }}</p>
   </div>
 </template>
 
@@ -21,19 +21,23 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .message {
   text-align: left;
   cursor: pointer;
-  padding: 20px 20px 60px;
+  padding: 20px 20px 40px;
   border-bottom: 1px solid rgba(50, 50, 50);
 }
 .message:hover {
   background: #eee;
 }
-.date{
+.message-date{
   text-align: right;
   color: #C0C0C0 ;
-  font-size: 12px;
+  font-size: 0.8em;
+}
+.messsage-body{
+  margin-top: 5px;
+  white-space: pre-line;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="sidemenu">
     <ul>
-      <li>全体連絡</li>
+      <li class="active">全体連絡</li>
       <li>雑談</li>
       <li>自己紹介</li>
     </ul>
@@ -14,10 +14,10 @@ export default {};
 
 <style>
 .sidemenu {
-  width: 250px;
-  height: 100%;
+  width: 299px;
+  height: 100vh;
   text-align: center;
-  border-right: 2px solid rgba(50, 50, 50);
+  border-right: 1px solid rgba(50, 50, 50);
 }
 .sidemenu {
   background: #eee;
@@ -32,7 +32,7 @@ export default {};
   background: rgba(50, 50, 50);
   color: #eee;
 }
-.sidemenu ul li:active {
+.active {
   background: rgba(50, 50, 50);
   color: #eee;
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <TextBox :onPost="dataTransfer" />
-    <MessageList :messages="messages" />
+    <MessageList :messages="reverseMessages" />
   </div>
 </template>
 
@@ -23,13 +23,18 @@ export default {
       this.messages.push(data);
     },
   },
+  computed: {
+    reverseMessages() {
+      return this.messages.slice().reverse();
+    },
+  },
 };
 </script>
 
 <style>
 .main {
   text-align: center;
-  width: calc(100% - 250px);
+  width: calc(100% - 300px);
   overflow: scroll;
 }
 </style>

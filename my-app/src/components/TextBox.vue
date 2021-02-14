@@ -36,13 +36,12 @@ export default {
       if (!this.message) {
         alert("Message can't be blank !");
       } else {
-        alert("thx");
         let post = {
           body: this.message,
           date: new Date().toLocaleString(),
         };
         this.onPost(post);
-        this.message = ""
+        this.message = "";
         return post;
       }
     },
@@ -55,6 +54,7 @@ textarea {
   width: 100%;
   border: 1px solid rgba(50, 50, 50);
   border-radius: 5px;
+  resize: none;
 }
 .form {
   padding: 10px 20px 30px;
