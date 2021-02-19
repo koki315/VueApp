@@ -1,5 +1,10 @@
 <template>
-  <button class="button" @click="$emit('onClick')">
+  <button
+    class="button"
+    @click="$emit('onClick')"
+    :class="{ disabled: disabled }"
+    :disabled="disabled"
+  >
     {{ buttonName }}
   </button>
 </template>
@@ -32,5 +37,8 @@ export default {
 }
 .button:hover {
   background: rgb(182, 0, 0);
+}
+.disabled {
+  opacity: 0.3;
 }
 </style>

@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "firebase": "^8.2.8",
+    "firebase-tools": "^9.4.0",
     "normalize.css": "^8.0.1",
     "vue": "^2.6.11"
   },

@@ -8,17 +8,19 @@
       v-model="message"
     ></textarea>
     <div class="button-container">
-      <Button buttonName="投稿" @onClick="posted"></Button>
+      <Button buttonName="投稿" @onClick="posted" :disabled="disabled"></Button>
     </div>
   </div>
 </template>
 
 <script>
 import Button from "@/components/Button";
+import MessageModel from "@/models/Message";
 export default {
   data() {
     return {
       message: "",
+      disabled: this.initialDisabled,
     };
   },
   props: {
@@ -26,22 +28,30 @@ export default {
       type: Function,
       required: true,
     },
+    initialDisabled:{
+      type:Boolean,
+      default:false
+    }
   },
 
   components: {
     Button: Button,
+    
   },
   methods: {
-    posted() {
+    async posted() {
+      this.disabled = true
       if (!this.message) {
         alert("Message can't be blank !");
+        this.disabled = false
       } else {
-        let post = {
-          body: this.message,
-          date: new Date().toLocaleString(),
-        };
+        const post = await MessageModel.save({
+          body:this.message
+        });
+        console.log(post);
         this.onPost(post);
         this.message = "";
+        this.disabled = false
         return post;
       }
     },
